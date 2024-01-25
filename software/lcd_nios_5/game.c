@@ -23,7 +23,7 @@
 *******************************************************************************/
 void saveCoordinatesToCSV(const alt_u32 *pointsBuffer, alt_u32 pointsCount) {
     //FILE *file = fopen(filename, "w");
-	FILE *file = fopen("coordinates.csv", "w");
+    FILE *file = fopen("coordinates.csv", "w");
     alt_u32 i;
     if (file != NULL) {
         // Write header if needed
@@ -56,8 +56,6 @@ void DrawOnLCDAndStore() {
     alt_u32 pointsCount = 0;
     alt_u32 pointsBuffer[MAX_POINTS];  // Each point is a 32-bit value
 
-
-
     while (1) {
         // Wait for touch input
         //while (!TP_INT_IN);
@@ -66,9 +64,9 @@ void DrawOnLCDAndStore() {
         touchPoint = Read_Ads7846();
 
         if (touchPoint != 0) {
-        	pointsCount++;
-        	pointsBuffer[pointsCount] = ((alt_u32)touchPoint->x << 16) | touchPoint->y;
-        	// Save coordinates to CSV
+            pointsCount++;
+            pointsBuffer[pointsCount] = ((alt_u32)touchPoint->x << 16) | touchPoint->y;
+            // Save coordinates to CSV
             saveCoordinatesToCSV(pointsBuffer, pointsCount);
             printf("Number of touches: %lu\n", pointsCount);
         }
@@ -102,7 +100,7 @@ void DrawOnLCDAndStore() {
 *******************************************************************************/
 void DisplayNumber(int number) {
 
-	LCD_Clear(RGB565CONVERT(200,200,120));
+    LCD_Clear(RGB565CONVERT(200,200,120));
     // Convert the number to a string (assuming a reasonable range)
     char numberStr[10];
     sprintf(numberStr, "%d", number);
@@ -119,7 +117,7 @@ void DisplayNumber(int number) {
 * Attention      : None
 *******************************************************************************/
 void DisplayStoredImage() {
-	LCD_Clear(RGB565CONVERT(200,200,120));
+    LCD_Clear(RGB565CONVERT(200,200,120));
     alt_u32 i;
     // Iterate through SDRAM and draw each stored point on the LCD
     for (i = 0; i < MAX_POINTS; i++) {

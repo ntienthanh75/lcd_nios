@@ -59,10 +59,10 @@ __inline void LCD_WriteIndex(alt_u16 index)
 __inline void LCD_WriteData(alt_u16 data)
 {
     Set_Rs;
-    
+
     IOWR_ALTERA_AVALON_PIO_DIRECTION(LCD32_DATA_BASE, 0XFFFF) ;  /* GPIO_Write(GPIOE,index); */
     IOWR_ALTERA_AVALON_PIO_DATA(LCD32_DATA_BASE, data);
-    
+
     Clr_nWr;
     Set_nWr;
 }
@@ -96,7 +96,7 @@ __inline alt_u16 LCD_ReadData(void)
     IOWR_ALTERA_AVALON_PIO_DIRECTION(LCD32_DATA_BASE, 0X0000) ;  /* GPIO_Write(GPIOE,index); */
     value=IORD_ALTERA_AVALON_PIO_DATA(LCD32_DATA_BASE);
      value=IORD_ALTERA_AVALON_PIO_DATA(LCD32_DATA_BASE);
-    
+
     IOWR_ALTERA_AVALON_PIO_DIRECTION(LCD32_DATA_BASE, 0XFFFF) ;
 
     Set_nRd;
@@ -149,41 +149,40 @@ __inline alt_u16 LCD_ReadReg(alt_u16 LCD_Reg)
 void LCD_SetCursor( alt_u16 Xpos, alt_u16 Ypos )
 {
     #if  ( DISP_ORIENTATION == 90 ) || ( DISP_ORIENTATION == 270 )
-    
-    alt_u16 temp = Xpos;
 
-             Xpos = Ypos;
-             Ypos = ( MAX_X - 1 ) - temp;  
+        alt_u16 temp = Xpos;
+        Xpos = Ypos;
+        Ypos = ( MAX_X - 1 ) - temp;  
 
     #elif  ( DISP_ORIENTATION == 0 ) || ( DISP_ORIENTATION == 180 )
         
     #endif
 
-  switch( LCD_Code )
-  {
-     default:        /* 0x9320 0x9325 0x9328 0x9331 0x5408 0x1505 0x0505 0x7783 0x4531 0x4535 */
-          LCD_WriteReg(0x0020, Xpos );     
-          LCD_WriteReg(0x0021, Ypos );     
-          break; 
+    switch (LCD_Code) {
+        default: /* 0x9320 0x9325 0x9328 0x9331 0x5408 0x1505 0x0505 0x7783 0x4531 0x4535 */
+            LCD_WriteReg(0x0020, Xpos);
+            LCD_WriteReg(0x0021, Ypos);
+            break;
 
-     case SSD1298:   /* 0x8999 */
-     case SSD1289:   /* 0x8989 */
-          LCD_WriteReg(0x004e, Xpos );      
-        LCD_WriteReg(0x004f, Ypos );          
-          break;  
+        case SSD1298: /* 0x8999 */
+        case SSD1289: /* 0x8989 */
+            LCD_WriteReg(0x004e, Xpos);
+            LCD_WriteReg(0x004f, Ypos);
+            break;
 
-     case HX8347A:   /* 0x0047 */
-     case HX8347D:   /* 0x0047 */
-          LCD_WriteReg(0x02, Xpos>>8 );                                                  
-          LCD_WriteReg(0x03, Xpos );  
+        case HX8347A: /* 0x0047 */
+        case HX8347D: /* 0x0047 */
+            LCD_WriteReg(0x02, Xpos >> 8);
+            LCD_WriteReg(0x03, Xpos);
 
-          LCD_WriteReg(0x06, Ypos>>8 );                           
-          LCD_WriteReg(0x07, Ypos );    
-    
-          break;     
-     case SSD2119:   /* 3.5 LCD 0x9919 */
-          break; 
-  }
+            LCD_WriteReg(0x06, Ypos >> 8);
+            LCD_WriteReg(0x07, Ypos);
+
+            break;
+
+        case SSD2119: /* 3.5 LCD 0x9919 */
+            break;
+    }
 }
 
 
@@ -219,10 +218,10 @@ void LCD_Initializtion(void)
 {
     alt_u16 DeviceCode;
 
-   // LCD_Configuration();
-     Clr_RST ;      /* LCD_RESET *////0
+    // LCD_Configuration();
+    Clr_RST ;      /* LCD_RESET *////0
     delay_ms(100);
-     Set_RST;    /////////1
+    Set_RST;    /////////1
 
     /* Set MN(multipliers) of PLL, VCO = crystal freq * (N+1) */
     /* PLL freq = VCO/M with 250MHz < VCO < 800MHz */
@@ -364,22 +363,22 @@ void LCD_Clear(alt_u16 Color)
     
     if( LCD_Code == HX8347D || LCD_Code == HX8347A )
     {
-        LCD_WriteReg(0x02,0x00);                                                  
-        LCD_WriteReg(0x03,0x00);  
-                        
-        LCD_WriteReg(0x04,0x00);                           
-        LCD_WriteReg(0x05,0xEF);  
-                         
-        LCD_WriteReg(0x06,0x00);                           
-        LCD_WriteReg(0x07,0x00);    
-                       
-        LCD_WriteReg(0x08,0x01);                           
-        LCD_WriteReg(0x09,0x3F);     
+        LCD_WriteReg(0x02,0x00);
+        LCD_WriteReg(0x03,0x00);
+
+        LCD_WriteReg(0x04,0x00);
+        LCD_WriteReg(0x05,0xEF);
+
+        LCD_WriteReg(0x06,0x00);
+        LCD_WriteReg(0x07,0x00);
+
+        LCD_WriteReg(0x08,0x01);
+        LCD_WriteReg(0x09,0x3F);
     }
     else
-    {   
+    {
         LCD_SetCursor(0,0); 
-    }   
+    }
     Clr_Cs; 
     LCD_WriteIndex(0x0022);
     for( index = 0; index < MAX_X * MAX_Y; index++ )
@@ -392,22 +391,22 @@ void LCD_show_test()
 { alt_u32 index=0,i;
     if( LCD_Code == HX8347D || LCD_Code == HX8347A )
     {
-        LCD_WriteReg(0x02,0x00);                                                  
-        LCD_WriteReg(0x03,0x00);  
+        LCD_WriteReg(0x02,0x00);
+        LCD_WriteReg(0x03,0x00);
                         
-        LCD_WriteReg(0x04,0x00);                           
-        LCD_WriteReg(0x05,0xEF);  
+        LCD_WriteReg(0x04,0x00);
+        LCD_WriteReg(0x05,0xEF);
                          
-        LCD_WriteReg(0x06,0x00);                           
-        LCD_WriteReg(0x07,0x00);    
+        LCD_WriteReg(0x06,0x00);
+        LCD_WriteReg(0x07,0x00);
                        
-        LCD_WriteReg(0x08,0x01);                           
-        LCD_WriteReg(0x09,0x3F);     
+        LCD_WriteReg(0x08,0x01);
+        LCD_WriteReg(0x09,0x3F);
     }
     else
-    {   
+    {
         LCD_SetCursor(0,0); 
-    }   
+    }
     Clr_Cs; 
     LCD_WriteIndex(0x0022);
   for( i = 0; i< 8; i++ )
@@ -416,12 +415,9 @@ void LCD_show_test()
         LCD_WriteData(colorfol1[i]);
     }
     while(1);
-    Set_Cs;         
-         
-         
-         
-}        
-   
+    Set_Cs;
+}
+
 /******************************************************************************
 * Function Name  : LCD_BGR2RGB
 * Description    : RRRRRGGGGGGBBBBB convert to BBBBBGGGGGGRRRRR
@@ -433,13 +429,13 @@ void LCD_show_test()
 alt_u16 LCD_BGR2RGB(alt_u16 color)
 {
     alt_u16  r, g, b, rgb;
-    
+
     b = ( color>>0 )  & 0x1f;
     g = ( color>>5 )  & 0x3f;
     r = ( color>>11 ) & 0x1f;
     
     rgb =  (b<<11) + (g<<5) + (r<<0);
-    
+
     return( rgb );
 }
 
@@ -453,43 +449,61 @@ alt_u16 LCD_BGR2RGB(alt_u16 color)
 * Return         : Screen Color
 * Attention      : None
 *******************************************************************************/
-alt_u16 LCD_GetPoint(alt_u16 Xpos,alt_u16 Ypos)
+alt_u16 LCD_GetPoint(alt_u16 Xpos, alt_u16 Ypos)
 {
     alt_u16 dummy;
-    
-    LCD_SetCursor(Xpos,Ypos);
+
+    // Set the cursor position on the LCD
+    LCD_SetCursor(Xpos, Ypos);
+
+    // Clear the chip select (CS) signal
     Clr_Cs;
-    LCD_WriteIndex(0x0022);  
-    
-    switch( LCD_Code )
+
+    // Send the command to read the pixel color
+    LCD_WriteIndex(0x0022);
+
+    // Switch statement based on the LCD controller code
+    switch (LCD_Code)
     {
+        // Cases for specific LCD controllers
         case ST7781:
         case LGDP4531:
         case LGDP4535:
         case SSD1289:
         case SSD1298:
-      dummy = LCD_ReadData();
-      dummy = LCD_ReadData(); 
-      Set_Cs;   
-          return  dummy;          
-    case HX8347A:
-      case HX8347D:
-    {
-      alt_u8 red,green,blue;
-      red = LCD_ReadData()>>3;
-      green = LCD_ReadData()>>3; 
-      blue = LCD_ReadData()>>2; 
-      dummy = ( green << 11 ) | (blue << 5 ) | red;
-        }
-      Set_Cs;   
-      return  dummy;
-    default:    /* 0x9320 0x9325 0x9328 0x9331 0x5408 0x1505 0x0505 0x9919 */
-      dummy = LCD_ReadData();
-      dummy = LCD_ReadData(); 
-      Set_Cs;   
-      return  LCD_BGR2RGB( dummy );
+            // Read dummy data twice (the actual pixel color)
+            dummy = LCD_ReadData();
+            dummy = LCD_ReadData();
+            // Set the chip select (CS) signal
+            Set_Cs;
+            return dummy;
+
+        case HX8347A:
+        case HX8347D:
+            // Read RGB components of the pixel color and combine them
+            {
+            	alt_u8 red, green, blue;
+                red = LCD_ReadData() >> 3;
+                green = LCD_ReadData() >> 3;
+                blue = LCD_ReadData() >> 2;
+                dummy = (green << 11) | (blue << 5) | red;
+            }
+            // Set the chip select (CS) signal
+            Set_Cs;
+            return dummy;
+
+        default:
+            // Default case for other LCD controllers
+            // Read dummy data twice and convert the color format
+            dummy = LCD_ReadData();
+            dummy = LCD_ReadData();
+            // Set the chip select (CS) signal
+            Set_Cs;
+            // Convert color format from BGR to RGB
+            return LCD_BGR2RGB(dummy);
     }
 }
+
 
 /******************************************************************************
 * Function Name  : LCD_SetPoint
@@ -534,89 +548,89 @@ void LCD_SetPoint(alt_u16 Xpos,alt_u16 Ypos,alt_u16 point)
 * Output         : None
 * Return         : None
 * Attention      : None
-*******************************************************************************/     
-void LCD_DrawLine( alt_u16 x0, alt_u16 y0, alt_u16 x1, alt_u16 y1 , alt_u16 color )
+*******************************************************************************/
+void LCD_DrawLine(alt_u16 x0, alt_u16 y0, alt_u16 x1, alt_u16 y1, alt_u16 color)
 {
-  short dx,dy;
-  short temp;
+    short dx, dy;
+    short temp;
 
-  if( x0 > x1 )
-  {
-    temp = x1;
-    x1 = x0;
-    x0 = temp;   
-  }
-  if( y0 > y1 )
-  {
-    temp = y1;
-    y1 = y0;
-    y0 = temp;   
-  }
-
-  dx = x1-x0;
-  dy = y1-y0;
-
-  if( dx == 0 )
-  {
-    do
-    { 
-      LCD_SetPoint(x0, y0, color);
-      y0++;
-    }
-    while( y1 >= y0 ); 
-    return; 
-  }
-  if( dy == 0 )
-  {
-    do
+    // Swap coordinates if needed to ensure x0 <= x1 and y0 <= y1
+    if (x0 > x1)
     {
-      LCD_SetPoint(x0, y0, color);
-      x0++;
+        short temp = x1;
+        x1 = x0;
+        x0 = temp;
     }
-    while( x1 >= x0 ); 
-        return;
-  }
-
-    /* Bresenham's line algorithm  */
-  if( dx > dy )
-  {
-    temp = 2 * dy - dx;
-    while( x0 != x1 )
+    if (y0 > y1)
     {
-        LCD_SetPoint(x0,y0,color);
-        x0++;
-        if( temp > 0 )
+        short temp = y1;
+        y1 = y0;
+        y0 = temp;
+    }
+
+    dx = x1 - x0;
+    dy = y1 - y0;
+
+    // Handle special cases for lines with zero slope
+    if (dx == 0)
+    {
+        do
         {
-          y0++;
-          temp += 2 * dy - 2 * dx; 
-          }
-      else         
-      {
-              temp += 2 * dy;
-            }       
+            LCD_SetPoint(x0, y0, color);
+            y0++;
+        } while (y1 >= y0);
+        return;
     }
-    LCD_SetPoint(x0,y0,color);
-  }  
-  else
-  {
-    temp = 2 * dx - dy;
-    while( y0 != y1 )
+    if (dy == 0)
     {
-          LCD_SetPoint(x0,y0,color);     
-      y0++;                 
-      if( temp > 0 )           
-      {
-        x0++;               
-        temp+=2*dy-2*dx; 
-      }
-      else
-            {
-        temp += 2 * dy;
-            }
-    } 
-    LCD_SetPoint(x0,y0,color);
+        do
+        {
+            LCD_SetPoint(x0, y0, color);
+            x0++;
+        } while (x1 >= x0);
+        return;
     }
-} 
+
+    // Bresenham's line algorithm
+    if (dx > dy)
+    {
+        temp = 2 * dy - dx;
+        while (x0 != x1)
+        {
+            LCD_SetPoint(x0, y0, color);
+            x0++;
+            if (temp > 0)
+            {
+                y0++;
+                temp += 2 * dy - 2 * dx;
+            }
+            else
+            {
+                temp += 2 * dy;
+            }
+        }
+        LCD_SetPoint(x0, y0, color);
+    }
+    else
+    {
+        temp = 2 * dx - dy;
+        while (y0 != y1)
+        {
+            LCD_SetPoint(x0, y0, color);
+            y0++;
+            if (temp > 0)
+            {
+                x0++;
+                temp += 2 * dy - 2 * dx;
+            }
+            else
+            {
+                temp += 2 * dy;
+            }
+        }
+        LCD_SetPoint(x0, y0, color);
+    }
+}
 
 /******************************************************************************
 * Function Name  : PutChar
@@ -688,7 +702,6 @@ void GUI_Text(alt_u16 Xpos, alt_u16 Ypos, alt_u8 *str,alt_u16 Color, alt_u16 bkC
     }
     while ( *str != 0 );
 }
-
 
 /*********************************************************************************************************
       END FILE
