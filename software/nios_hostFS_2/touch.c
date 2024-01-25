@@ -1,3 +1,11 @@
+/*********************************************************************************************************
+* File                : touch.c
+* Hardware Environment:
+* Build Environment   : RealView MDK-ARM  Version: 4.20
+* Version             : v0.0.1
+* By                  : NGUYEN Tien Thanh
+* Created             : Jan 18, 2024
+*********************************************************************************************************/
 #include "Touch.h"
 #include "LCD32.h"
 
@@ -289,7 +297,7 @@ alt_u8 setCalibrationMatrix( Coordinate * displayPtr,
 {
 
   alt_u8 retTHRESHOLD = 1 ;
-  /* K£½(X0£­X2) (Y1£­Y2)£­(X1£­X2) (Y0£­Y2) */
+  /* Kï¿½ï¿½(X0ï¿½ï¿½X2) (Y1ï¿½ï¿½Y2)ï¿½ï¿½(X1ï¿½ï¿½X2) (Y0ï¿½ï¿½Y2) */
   matrixPtr->Divider = ((screenPtr[0].x - screenPtr[2].x) * (screenPtr[1].y - screenPtr[2].y)) - 
                        ((screenPtr[1].x - screenPtr[2].x) * (screenPtr[0].y - screenPtr[2].y)) ;
   if( matrixPtr->Divider == 0 )
@@ -298,23 +306,23 @@ alt_u8 setCalibrationMatrix( Coordinate * displayPtr,
   }
   else
   {
-    /* A£½((XD0£­XD2) (Y1£­Y2)£­(XD1£­XD2) (Y0£­Y2))£¯K    */
+    /* Aï¿½ï¿½((XD0ï¿½ï¿½XD2) (Y1ï¿½ï¿½Y2)ï¿½ï¿½(XD1ï¿½ï¿½XD2) (Y0ï¿½ï¿½Y2))ï¿½ï¿½K    */
     matrixPtr->An = ((displayPtr[0].x - displayPtr[2].x) * (screenPtr[1].y - screenPtr[2].y)) - 
                     ((displayPtr[1].x - displayPtr[2].x) * (screenPtr[0].y - screenPtr[2].y)) ;
-    /* B£½((X0£­X2) (XD1£­XD2)£­(XD0£­XD2) (X1£­X2))£¯K    */
+    /* Bï¿½ï¿½((X0ï¿½ï¿½X2) (XD1ï¿½ï¿½XD2)ï¿½ï¿½(XD0ï¿½ï¿½XD2) (X1ï¿½ï¿½X2))ï¿½ï¿½K    */
     matrixPtr->Bn = ((screenPtr[0].x - screenPtr[2].x) * (displayPtr[1].x - displayPtr[2].x)) - 
                     ((displayPtr[0].x - displayPtr[2].x) * (screenPtr[1].x - screenPtr[2].x)) ;
-    /* C£½(Y0(X2XD1£­X1XD2)+Y1(X0XD2£­X2XD0)+Y2(X1XD0£­X0XD1))£¯K */
+    /* Cï¿½ï¿½(Y0(X2XD1ï¿½ï¿½X1XD2)+Y1(X0XD2ï¿½ï¿½X2XD0)+Y2(X1XD0ï¿½ï¿½X0XD1))ï¿½ï¿½K */
     matrixPtr->Cn = (screenPtr[2].x * displayPtr[1].x - screenPtr[1].x * displayPtr[2].x) * screenPtr[0].y +
                     (screenPtr[0].x * displayPtr[2].x - screenPtr[2].x * displayPtr[0].x) * screenPtr[1].y +
                     (screenPtr[1].x * displayPtr[0].x - screenPtr[0].x * displayPtr[1].x) * screenPtr[2].y ;
-    /* D£½((YD0£­YD2) (Y1£­Y2)£­(YD1£­YD2) (Y0£­Y2))£¯K    */
+    /* Dï¿½ï¿½((YD0ï¿½ï¿½YD2) (Y1ï¿½ï¿½Y2)ï¿½ï¿½(YD1ï¿½ï¿½YD2) (Y0ï¿½ï¿½Y2))ï¿½ï¿½K    */
     matrixPtr->Dn = ((displayPtr[0].y - displayPtr[2].y) * (screenPtr[1].y - screenPtr[2].y)) - 
                     ((displayPtr[1].y - displayPtr[2].y) * (screenPtr[0].y - screenPtr[2].y)) ;
-    /* E£½((X0£­X2) (YD1£­YD2)£­(YD0£­YD2) (X1£­X2))£¯K    */
+    /* Eï¿½ï¿½((X0ï¿½ï¿½X2) (YD1ï¿½ï¿½YD2)ï¿½ï¿½(YD0ï¿½ï¿½YD2) (X1ï¿½ï¿½X2))ï¿½ï¿½K    */
     matrixPtr->En = ((screenPtr[0].x - screenPtr[2].x) * (displayPtr[1].y - displayPtr[2].y)) - 
                     ((displayPtr[0].y - displayPtr[2].y) * (screenPtr[1].x - screenPtr[2].x)) ;
-    /* F£½(Y0(X2YD1£­X1YD2)+Y1(X0YD2£­X2YD0)+Y2(X1YD0£­X0YD1))£¯K */
+    /* Fï¿½ï¿½(Y0(X2YD1ï¿½ï¿½X1YD2)+Y1(X0YD2ï¿½ï¿½X2YD0)+Y2(X1YD0ï¿½ï¿½X0YD1))ï¿½ï¿½K */
     matrixPtr->Fn = (screenPtr[2].x * displayPtr[1].y - screenPtr[1].x * displayPtr[2].y) * screenPtr[0].y +
                     (screenPtr[0].x * displayPtr[2].y - screenPtr[2].x * displayPtr[0].y) * screenPtr[1].y +
                     (screenPtr[1].x * displayPtr[0].y - screenPtr[0].x * displayPtr[1].y) * screenPtr[2].y ;

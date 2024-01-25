@@ -1,15 +1,10 @@
 /*********************************************************************************************************
-*
-* File                : TouchPanel.h
-* Hardware Environment: 
+* File                : touch.h
+* Hardware Environment:
 * Build Environment   : RealView MDK-ARM  Version: 4.20
-* Version             : V1.0
-* By                  : 
-*
-*                                  (c) Copyright 2005-2011, WaveShare
-*                                       http://www.waveshare.net
-*                                          All Rights Reserved
-*
+* Version             : v0.0.1
+* By                  : NGUYEN Tien Thanh
+* Created             : Jan 18, 2024
 *********************************************************************************************************/
 
 #ifndef _TOUCH_H_

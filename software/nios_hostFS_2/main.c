@@ -1,15 +1,10 @@
-/********************************************************************************************************
-*
-* File                : LCD22(main)
+/*********************************************************************************************************
+* File                : main.c
 * Hardware Environment:
-* Build Environment   : Quartus II Version 10.1 / Nios II 10.1
-* Version             :
-* By                  : Su Wei Feng
-*
-*                                  (c) Copyright 2005-2011, WaveShare
-*                                       http://www.waveshare.net
-*                                          All Rights Reserved
-*
+* Build Environment   : RealView MDK-ARM  Version: 4.20
+* Version             : v0.0.1
+* By                  : NGUYEN Tien Thanh
+* Created             : Jan 18, 2024
 *********************************************************************************************************/
 #include "alt_types.h"
 #include <io.h>
