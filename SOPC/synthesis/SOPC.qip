@@ -1,0 +1,163 @@
+set_global_assignment -entity "SOPC" -library "SOPC" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "SOPC" -library "SOPC" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "SOPC" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "SOPC" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../SOPC.sopcinfo"]
+set_instance_assignment -entity "SOPC" -library "SOPC" -name SLD_INFO "QSYS_NAME SOPC HAS_SOPCINFO 1 GENERATION_ID 1705694830"
+set_global_assignment -library "SOPC" -name MISC_FILE [file join $::quartus(qip_path) "../../SOPC.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "SOPC" -name MISC_FILE [file join $::quartus(qip_path) "../../SOPC.qsys"]
+
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "SOPC.v"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_irq_mapper.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_width_adapter.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_address_alignment.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_rsp_xbar_mux_001.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_rsp_xbar_mux.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_rsp_xbar_demux_003.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_rsp_xbar_demux.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cmd_xbar_mux.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cmd_xbar_demux_001.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cmd_xbar_demux.sv"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "SOPC" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_adapter.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_traffic_limiter.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_st_pipeline_base.v"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_id_router_003.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_id_router_002.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_id_router.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_addr_router_001.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_addr_router.sv"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_agent.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "SOPC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_buzz.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_led.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_sysid.v"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu.ocp"]
+set_global_assignment -library "SOPC" -name SDC_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu.sdc"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu.v"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_bht_ram.mif"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_ic_tag_ram.mif"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_jtag_debug_module_sysclk.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_jtag_debug_module_tck.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_jtag_debug_module_wrapper.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_mult_cell.v"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_ociram_default_contents.mif"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_oci_test_bench.v"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_rf_ram_a.mif"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_rf_ram_b.mif"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_cpu_test_bench.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_lcd32_data.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_touch_irq.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_lcd_cs.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_spi_touch.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_jtag_uart.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_sdram.v"]
+set_global_assignment -library "SOPC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SOPC_epcs.v"]
+set_global_assignment -library "SOPC" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/SOPC_epcs_boot_rom.hex"]
+
+set_global_assignment -entity "SOPC_irq_mapper" -library "SOPC" -name IP_TOOL_NAME "altera_irq_mapper"
+set_global_assignment -entity "SOPC_irq_mapper" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_irq_mapper" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_width_adapter"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_width_adapter" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_rsp_xbar_mux_001" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "SOPC_rsp_xbar_mux_001" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_rsp_xbar_mux_001" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_rsp_xbar_mux" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "SOPC_rsp_xbar_mux" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_rsp_xbar_mux" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_rsp_xbar_demux_003" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "SOPC_rsp_xbar_demux_003" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_rsp_xbar_demux_003" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_rsp_xbar_demux" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "SOPC_rsp_xbar_demux" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_rsp_xbar_demux" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_cmd_xbar_mux" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "SOPC_cmd_xbar_mux" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_cmd_xbar_mux" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_cmd_xbar_demux_001" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "SOPC_cmd_xbar_demux_001" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_cmd_xbar_demux_001" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_cmd_xbar_demux" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "SOPC_cmd_xbar_demux" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_cmd_xbar_demux" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_reset_controller" -library "SOPC" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_reset_controller" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_burst_adapter"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_traffic_limiter" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_traffic_limiter"
+set_global_assignment -entity "altera_merlin_traffic_limiter" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_traffic_limiter" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_id_router_003" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "SOPC_id_router_003" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_id_router_003" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_id_router_002" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "SOPC_id_router_002" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_id_router_002" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_id_router" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "SOPC_id_router" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_id_router" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_addr_router_001" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "SOPC_addr_router_001" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_addr_router_001" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_addr_router" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "SOPC_addr_router" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_addr_router" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_sc_fifo"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_slave_agent"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_agent" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_master_agent"
+set_global_assignment -entity "altera_merlin_master_agent" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_agent" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "SOPC" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_translator" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_buzz" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "SOPC_buzz" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_buzz" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_led" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "SOPC_led" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_led" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_sysid" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_sysid_qsys"
+set_global_assignment -entity "SOPC_sysid" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_sysid" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_cpu" -library "SOPC" -name IP_TOOL_NAME "altera_nios2_qsys"
+set_global_assignment -entity "SOPC_cpu" -library "SOPC" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "SOPC_cpu" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_lcd32_data" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "SOPC_lcd32_data" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_lcd32_data" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_touch_irq" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "SOPC_touch_irq" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_touch_irq" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_lcd_cs" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "SOPC_lcd_cs" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_lcd_cs" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_spi_touch" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_spi"
+set_global_assignment -entity "SOPC_spi_touch" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_spi_touch" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_jtag_uart" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
+set_global_assignment -entity "SOPC_jtag_uart" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_jtag_uart" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_sdram" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_new_sdram_controller"
+set_global_assignment -entity "SOPC_sdram" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_sdram" -library "SOPC" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "SOPC_epcs" -library "SOPC" -name IP_TOOL_NAME "altera_avalon_epcs_flash_controller"
+set_global_assignment -entity "SOPC_epcs" -library "SOPC" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "SOPC_epcs" -library "SOPC" -name IP_TOOL_ENV "Qsys"

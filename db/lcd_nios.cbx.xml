@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lcd_nios">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_mult_cell:the_SOPC_cpu_mult_cell|altera_mult_add:the_altmult_add_part_1|altera_mult_add_mpt2:auto_generated|altera_mult_add_rtl:altera_mult_add_rtl1|ama_multiplier_function:multiplier_block|lpm_mult:Mult0" CBX_FILE_NAME="mult_1l01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_mult_cell:the_SOPC_cpu_mult_cell|altera_mult_add:the_altmult_add_part_2" CBX_FILE_NAME="altera_mult_add_opt2.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_epcs:epcs|altsyncram:the_boot_copier_rom" CBX_FILE_NAME="altsyncram_6431.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_jtag_uart:jtag_uart|SOPC_jtag_uart_scfifo_r:the_SOPC_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_ic_data_module:SOPC_cpu_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_c9d1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_ic_tag_module:SOPC_cpu_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_keg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_nios2_oci:the_SOPC_cpu_nios2_oci|SOPC_cpu_nios2_ocimem:the_SOPC_cpu_nios2_ocimem|SOPC_cpu_ociram_sp_ram_module:SOPC_cpu_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_8471.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_register_bank_b_module:SOPC_cpu_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ejf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|lpm_add_sub:Add10" CBX_FILE_NAME="add_sub_8ri.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_bht_module:SOPC_cpu_bht|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_d5g1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_mult_cell:the_SOPC_cpu_mult_cell|altera_mult_add:the_altmult_add_part_1" CBX_FILE_NAME="altera_mult_add_mpt2.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_mult_cell:the_SOPC_cpu_mult_cell|altera_mult_add:the_altmult_add_part_2|altera_mult_add_opt2:auto_generated|altera_mult_add_rtl:altera_mult_add_rtl1|ama_multiplier_function:multiplier_block|lpm_mult:Mult0" CBX_FILE_NAME="mult_1s01.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_cpu:cpu|SOPC_cpu_register_bank_a_module:SOPC_cpu_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_djf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd_nios|SOPC:inst2|SOPC_jtag_uart:jtag_uart|SOPC_jtag_uart_scfifo_w:the_SOPC_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

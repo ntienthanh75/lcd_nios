@@ -1,0 +1,675 @@
+Analysis & Synthesis report for lcd_nios
+Wed Jan 17 23:50:41 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Elapsed Time Per Partition
+ 10. Analysis & Synthesis Messages
+ 11. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jan 17 23:50:41 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; lcd_nios                                        ;
+; Top-level Entity Name              ; lcd_nios                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 78                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; lcd_nios           ; lcd_nios           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
+; lcd_nios.vhd                     ; yes             ; User VHDL File  ; D:/fpga/lcd_nios/lcd_nios.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 78    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |lcd_nios                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 78   ; 0            ; |lcd_nios           ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jan 17 23:50:22 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lcd_nios -c lcd_nios
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12248): Elaborating Qsys system entity "SOPC.qsys"
+Info (12250): 2024.01.17.23:50:23 Progress: Loading lcd_nios/SOPC.qsys
+Info (12250): 2024.01.17.23:50:23 Progress: Reading input file
+Info (12250): 2024.01.17.23:50:23 Progress: Adding clk [clock_source 13.0]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module clk
+Info (12250): 2024.01.17.23:50:24 Progress: Adding epcs [altera_avalon_epcs_flash_controller 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module epcs
+Info (12250): 2024.01.17.23:50:24 Progress: Adding sdram [altera_avalon_new_sdram_controller 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module sdram
+Info (12250): 2024.01.17.23:50:24 Progress: Adding jtag_uart [altera_avalon_jtag_uart 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module jtag_uart
+Info (12250): 2024.01.17.23:50:24 Progress: Adding spi_touch [altera_avalon_spi 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module spi_touch
+Info (12250): 2024.01.17.23:50:24 Progress: Adding lcd_cs [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module lcd_cs
+Info (12250): 2024.01.17.23:50:24 Progress: Adding touch_cs [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module touch_cs
+Info (12250): 2024.01.17.23:50:24 Progress: Adding lcd_rs [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module lcd_rs
+Info (12250): 2024.01.17.23:50:24 Progress: Adding touch_irq [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module touch_irq
+Info (12250): 2024.01.17.23:50:24 Progress: Adding reset [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module reset
+Info (12250): 2024.01.17.23:50:24 Progress: Adding lcd_wr [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module lcd_wr
+Info (12250): 2024.01.17.23:50:24 Progress: Adding lcd32_data [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module lcd32_data
+Info (12250): 2024.01.17.23:50:24 Progress: Adding lcd_rd [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module lcd_rd
+Info (12250): 2024.01.17.23:50:24 Progress: Adding bl_p [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module bl_p
+Info (12250): 2024.01.17.23:50:24 Progress: Adding bl_n [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module bl_n
+Info (12250): 2024.01.17.23:50:24 Progress: Adding cpu [altera_nios2_qsys 13.0]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module cpu
+Info (12250): 2024.01.17.23:50:24 Progress: Adding sysid [altera_avalon_sysid_qsys 13.0]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module sysid
+Info (12250): 2024.01.17.23:50:24 Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module led
+Info (12250): 2024.01.17.23:50:24 Progress: Adding buzz [altera_avalon_pio 13.0.1.99.2]
+Info (12250): 2024.01.17.23:50:24 Progress: Parameterizing module buzz
+Info (12250): 2024.01.17.23:50:24 Progress: Building connections
+Info (12250): 2024.01.17.23:50:25 Progress: Parameterizing connections
+Info (12250): 2024.01.17.23:50:25 Progress: Validating
+Info (12250): 2024.01.17.23:50:25 Progress: Done reading input file
+Info (12250): SOPC.touch_irq: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info (12250): SOPC.lcd32_data: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info (12250): SOPC.cpu: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info (12250): SOPC.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info (12250): SOPC.sysid: Time stamp will be automatically updated when this component is generated.
+Info (12250): SOPC: Generating SOPC "SOPC" for QUARTUS_SYNTH
+Info (12250): Pipeline_bridge_swap_transform: After transform: 19 modules, 78 connections
+Info (12250): No custom instruction connections, skipping transform 
+Info (12250): Merlin_translator_transform: After transform: 39 modules, 158 connections
+Info (12250): Merlin_domain_transform: After transform: 79 modules, 429 connections
+Info (12250): Merlin_router_transform: After transform: 99 modules, 509 connections
+Info (12250): Merlin_traffic_limiter_transform: After transform: 100 modules, 514 connections
+Info (12250): Merlin_burst_transform: After transform: 101 modules, 518 connections
+Info (12250): Reset_adaptation_transform: After transform: 102 modules, 402 connections
+Info (12250): Merlin_network_to_switch_transform: After transform: 141 modules, 484 connections
+Info (12250): Merlin_width_transform: After transform: 143 modules, 490 connections
+Info (12250): Limiter_update_transform: After transform: 143 modules, 491 connections
+Info (12250): Merlin_mm_transform: After transform: 143 modules, 491 connections
+Info (12250): Merlin_interrupt_mapper_transform: After transform: 144 modules, 494 connections
+Warning (12251): SOPC: "No matching role found for epcs:epcs_control_port:endofpacket (endofpacket)"
+Warning (12251): SOPC: "No matching role found for epcs:epcs_control_port:dataavailable (dataavailable)"
+Warning (12251): SOPC: "No matching role found for epcs:epcs_control_port:readyfordata (readyfordata)"
+Info (12250): Epcs: Starting RTL generation for module 'SOPC_epcs'
+Info (12250): Epcs:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_epcs_flash_controller/generate_rtl.pl --name=SOPC_epcs --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0001_epcs_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0001_epcs_gen//SOPC_epcs_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Epcs: Done RTL generation for module 'SOPC_epcs'
+Info (12250): Epcs: "SOPC" instantiated altera_avalon_epcs_flash_controller "epcs"
+Info (12250): Sdram: Starting RTL generation for module 'SOPC_sdram'
+Info (12250): Sdram:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=SOPC_sdram --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0002_sdram_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0002_sdram_gen//SOPC_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Sdram: Done RTL generation for module 'SOPC_sdram'
+Info (12250): Sdram: "SOPC" instantiated altera_avalon_new_sdram_controller "sdram"
+Info (12250): Jtag_uart: Starting RTL generation for module 'SOPC_jtag_uart'
+Info (12250): Jtag_uart:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=SOPC_jtag_uart --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0003_jtag_uart_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0003_jtag_uart_gen//SOPC_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Jtag_uart: Done RTL generation for module 'SOPC_jtag_uart'
+Info (12250): Jtag_uart: "SOPC" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info (12250): Spi_touch: Starting RTL generation for module 'SOPC_spi_touch'
+Info (12250): Spi_touch:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=SOPC_spi_touch --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0004_spi_touch_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0004_spi_touch_gen//SOPC_spi_touch_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Spi_touch: Done RTL generation for module 'SOPC_spi_touch'
+Info (12250): Spi_touch: "SOPC" instantiated altera_avalon_spi "spi_touch"
+Info (12250): Lcd_cs: Starting RTL generation for module 'SOPC_lcd_cs'
+Info (12250): Lcd_cs:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=SOPC_lcd_cs --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0005_lcd_cs_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0005_lcd_cs_gen//SOPC_lcd_cs_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Lcd_cs: Done RTL generation for module 'SOPC_lcd_cs'
+Info (12250): Lcd_cs: "SOPC" instantiated altera_avalon_pio "lcd_cs"
+Info (12250): Touch_irq: Starting RTL generation for module 'SOPC_touch_irq'
+Info (12250): Touch_irq:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=SOPC_touch_irq --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0006_touch_irq_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0006_touch_irq_gen//SOPC_touch_irq_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Touch_irq: Done RTL generation for module 'SOPC_touch_irq'
+Info (12250): Touch_irq: "SOPC" instantiated altera_avalon_pio "touch_irq"
+Info (12250): Lcd32_data: Starting RTL generation for module 'SOPC_lcd32_data'
+Info (12250): Lcd32_data:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=SOPC_lcd32_data --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0007_lcd32_data_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0007_lcd32_data_gen//SOPC_lcd32_data_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Lcd32_data: Done RTL generation for module 'SOPC_lcd32_data'
+Info (12250): Lcd32_data: "SOPC" instantiated altera_avalon_pio "lcd32_data"
+Info (12250): Cpu: Starting RTL generation for module 'SOPC_cpu'
+Info (12250): Cpu:   Generation command is [exec D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- D:/program/altera/13.0sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=SOPC_cpu --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0008_cpu_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0008_cpu_gen//SOPC_cpu_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*) Starting Nios II generation
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Checking for plaintext license.
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Couldn't query license setup in Quartus directory D:/program/altera/13.0sp1/quartus
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   LM_LICENSE_FILE environment variable is empty
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Plaintext license not found.
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Checking for encrypted license (non-evaluation).
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Couldn't query license setup in Quartus directory D:/program/altera/13.0sp1/quartus
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   LM_LICENSE_FILE environment variable is empty
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Elaborating CPU configuration settings
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)   Creating all objects for CPU
+Info (12250): Cpu: # 2024.01.17 23:50:32 (*)     Testbench
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)     Instruction decoding
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)       Instruction fields
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)       Instruction decodes
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)       Signals for RTL simulation waveforms
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)       Instruction controls
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)     Pipeline frontend
+Info (12250): Cpu: # 2024.01.17 23:50:33 (*)     Pipeline backend
+Info (12250): Cpu: # 2024.01.17 23:50:35 (*)   Generating RTL from CPU objects
+Info (12250): Cpu: # 2024.01.17 23:50:37 (*)   Creating encrypted RTL
+Info (12250): Cpu: # 2024.01.17 23:50:38 (*) Done Nios II generation
+Info (12250): Cpu: Done RTL generation for module 'SOPC_cpu'
+Info (12250): Cpu: "SOPC" instantiated altera_nios2_qsys "cpu"
+Info (12250): Sysid: "SOPC" instantiated altera_avalon_sysid_qsys "sysid"
+Info (12250): Led: Starting RTL generation for module 'SOPC_led'
+Info (12250): Led:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=SOPC_led --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0010_led_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0010_led_gen//SOPC_led_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Led: Done RTL generation for module 'SOPC_led'
+Info (12250): Led: "SOPC" instantiated altera_avalon_pio "led"
+Info (12250): Buzz: Starting RTL generation for module 'SOPC_buzz'
+Info (12250): Buzz:   Generation command is [exec D:/program/altera/13.0sp1/quartus/bin/perl/bin/perl.exe -I D:/program/altera/13.0sp1/quartus/common/ip/altera/common/perl/5.8.3 -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/europa -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin/perl_lib -I D:/program/altera/13.0sp1/quartus/sopc_builder/bin -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/common -I D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/program/altera/13.0sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=SOPC_buzz --dir=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0011_buzz_gen/ --quartus_dir=D:/program/altera/13.0sp1/quartus --verilog --config=C:/Users/ntien/AppData/Local/Temp/alt9739_9100505730344379184.dir/0011_buzz_gen//SOPC_buzz_component_configuration.pl  --do_build_sim=0  ]
+Info (12250): Buzz: Done RTL generation for module 'SOPC_buzz'
+Info (12250): Buzz: "SOPC" instantiated altera_avalon_pio "buzz"
+Info (12250): Cpu_instruction_master_translator: "SOPC" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info (12250): Cpu_jtag_debug_module_translator: "SOPC" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info (12250): Cpu_instruction_master_translator_avalon_universal_master_0_agent: "SOPC" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info (12250): Cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "SOPC" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info (12250): Cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "SOPC" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info (12250): Addr_router: "SOPC" instantiated altera_merlin_router "addr_router"
+Info (12250): Addr_router_001: "SOPC" instantiated altera_merlin_router "addr_router_001"
+Info (12250): Id_router: "SOPC" instantiated altera_merlin_router "id_router"
+Info (12250): Id_router_002: "SOPC" instantiated altera_merlin_router "id_router_002"
+Info (12250): Id_router_003: "SOPC" instantiated altera_merlin_router "id_router_003"
+Info (12250): Limiter: "SOPC" instantiated altera_merlin_traffic_limiter "limiter"
+Info (12250): Burst_adapter: "SOPC" instantiated altera_merlin_burst_adapter "burst_adapter"
+Info (12250): Rst_controller: "SOPC" instantiated altera_reset_controller "rst_controller"
+Info (12250): Cmd_xbar_demux: "SOPC" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info (12250): Cmd_xbar_demux_001: "SOPC" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info (12250): Cmd_xbar_mux: "SOPC" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info (12250): Rsp_xbar_demux: "SOPC" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info (12250): Rsp_xbar_demux_003: "SOPC" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info (12250): Rsp_xbar_mux: "SOPC" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info (12250): Reusing file D:/fpga/lcd_nios/db/ip/SOPC/submodules/altera_merlin_arbitrator.sv
+Info (12250): Rsp_xbar_mux_001: "SOPC" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info (12250): Reusing file D:/fpga/lcd_nios/db/ip/SOPC/submodules/altera_merlin_arbitrator.sv
+Info (12250): Width_adapter: "SOPC" instantiated altera_merlin_width_adapter "width_adapter"
+Info (12250): Reusing file D:/fpga/lcd_nios/db/ip/SOPC/submodules/altera_merlin_address_alignment.sv
+Info (12250): Reusing file D:/fpga/lcd_nios/db/ip/SOPC/submodules/altera_merlin_burst_uncompressor.sv
+Info (12250): Irq_mapper: "SOPC" instantiated altera_irq_mapper "irq_mapper"
+Info (12250): SOPC: Done SOPC" with 34 modules, 170 files, 3562083 bytes
+Info (12249): Finished elaborating Qsys system entity "SOPC.qsys"
+Info (12021): Found 2 design units, including 1 entities, in source file altpll0.vhd
+    Info (12022): Found design unit 1: altpll0-SYN
+    Info (12023): Found entity 1: altpll0
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_nios.vhd
+    Info (12022): Found design unit 1: lcd_nios-ppl_type
+    Info (12023): Found entity 1: lcd_nios
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/sopc.v
+    Info (12023): Found entity 1: SOPC
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_addr_router.sv
+    Info (12023): Found entity 1: SOPC_addr_router_default_decode
+    Info (12023): Found entity 2: SOPC_addr_router
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_addr_router_001.sv
+    Info (12023): Found entity 1: SOPC_addr_router_001_default_decode
+    Info (12023): Found entity 2: SOPC_addr_router_001
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_buzz.v
+    Info (12023): Found entity 1: SOPC_buzz
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cmd_xbar_demux.sv
+    Info (12023): Found entity 1: SOPC_cmd_xbar_demux
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cmd_xbar_demux_001.sv
+    Info (12023): Found entity 1: SOPC_cmd_xbar_demux_001
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cmd_xbar_mux.sv
+    Info (12023): Found entity 1: SOPC_cmd_xbar_mux
+Info (12021): Found 24 design units, including 24 entities, in source file db/ip/sopc/submodules/sopc_cpu.v
+    Info (12023): Found entity 1: SOPC_cpu_ic_data_module
+    Info (12023): Found entity 2: SOPC_cpu_ic_tag_module
+    Info (12023): Found entity 3: SOPC_cpu_bht_module
+    Info (12023): Found entity 4: SOPC_cpu_register_bank_a_module
+    Info (12023): Found entity 5: SOPC_cpu_register_bank_b_module
+    Info (12023): Found entity 6: SOPC_cpu_nios2_oci_debug
+    Info (12023): Found entity 7: SOPC_cpu_ociram_sp_ram_module
+    Info (12023): Found entity 8: SOPC_cpu_nios2_ocimem
+    Info (12023): Found entity 9: SOPC_cpu_nios2_avalon_reg
+    Info (12023): Found entity 10: SOPC_cpu_nios2_oci_break
+    Info (12023): Found entity 11: SOPC_cpu_nios2_oci_xbrk
+    Info (12023): Found entity 12: SOPC_cpu_nios2_oci_dbrk
+    Info (12023): Found entity 13: SOPC_cpu_nios2_oci_itrace
+    Info (12023): Found entity 14: SOPC_cpu_nios2_oci_td_mode
+    Info (12023): Found entity 15: SOPC_cpu_nios2_oci_dtrace
+    Info (12023): Found entity 16: SOPC_cpu_nios2_oci_compute_tm_count
+    Info (12023): Found entity 17: SOPC_cpu_nios2_oci_fifowp_inc
+    Info (12023): Found entity 18: SOPC_cpu_nios2_oci_fifocount_inc
+    Info (12023): Found entity 19: SOPC_cpu_nios2_oci_fifo
+    Info (12023): Found entity 20: SOPC_cpu_nios2_oci_pib
+    Info (12023): Found entity 21: SOPC_cpu_nios2_oci_im
+    Info (12023): Found entity 22: SOPC_cpu_nios2_performance_monitors
+    Info (12023): Found entity 23: SOPC_cpu_nios2_oci
+    Info (12023): Found entity 24: SOPC_cpu
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_jtag_debug_module_sysclk.v
+    Info (12023): Found entity 1: SOPC_cpu_jtag_debug_module_sysclk
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_jtag_debug_module_tck.v
+    Info (12023): Found entity 1: SOPC_cpu_jtag_debug_module_tck
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_jtag_debug_module_wrapper.v
+    Info (12023): Found entity 1: SOPC_cpu_jtag_debug_module_wrapper
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_mult_cell.v
+    Info (12023): Found entity 1: SOPC_cpu_mult_cell
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_oci_test_bench.v
+    Info (12023): Found entity 1: SOPC_cpu_oci_test_bench
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_cpu_test_bench.v
+    Info (12023): Found entity 1: SOPC_cpu_test_bench
+Info (12021): Found 3 design units, including 3 entities, in source file db/ip/sopc/submodules/sopc_epcs.v
+    Info (12023): Found entity 1: SOPC_epcs_sub
+    Info (12023): Found entity 2: tornado_SOPC_epcs_atom
+    Info (12023): Found entity 3: SOPC_epcs
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_id_router.sv
+    Info (12023): Found entity 1: SOPC_id_router_default_decode
+    Info (12023): Found entity 2: SOPC_id_router
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_id_router_002.sv
+    Info (12023): Found entity 1: SOPC_id_router_002_default_decode
+    Info (12023): Found entity 2: SOPC_id_router_002
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_id_router_003.sv
+    Info (12023): Found entity 1: SOPC_id_router_003_default_decode
+    Info (12023): Found entity 2: SOPC_id_router_003
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_irq_mapper.sv
+    Info (12023): Found entity 1: SOPC_irq_mapper
+Info (12021): Found 5 design units, including 5 entities, in source file db/ip/sopc/submodules/sopc_jtag_uart.v
+    Info (12023): Found entity 1: SOPC_jtag_uart_sim_scfifo_w
+    Info (12023): Found entity 2: SOPC_jtag_uart_scfifo_w
+    Info (12023): Found entity 3: SOPC_jtag_uart_sim_scfifo_r
+    Info (12023): Found entity 4: SOPC_jtag_uart_scfifo_r
+    Info (12023): Found entity 5: SOPC_jtag_uart
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_lcd32_data.v
+    Info (12023): Found entity 1: SOPC_lcd32_data
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_lcd_cs.v
+    Info (12023): Found entity 1: SOPC_lcd_cs
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_led.v
+    Info (12023): Found entity 1: SOPC_led
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_rsp_xbar_demux.sv
+    Info (12023): Found entity 1: SOPC_rsp_xbar_demux
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_rsp_xbar_demux_003.sv
+    Info (12023): Found entity 1: SOPC_rsp_xbar_demux_003
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_rsp_xbar_mux.sv
+    Info (12023): Found entity 1: SOPC_rsp_xbar_mux
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_rsp_xbar_mux_001.sv
+    Info (12023): Found entity 1: SOPC_rsp_xbar_mux_001
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/sopc_sdram.v
+    Info (12023): Found entity 1: SOPC_sdram_input_efifo_module
+    Info (12023): Found entity 2: SOPC_sdram
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_spi_touch.v
+    Info (12023): Found entity 1: SOPC_spi_touch
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_sysid.v
+    Info (12023): Found entity 1: SOPC_sysid
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/sopc_touch_irq.v
+    Info (12023): Found entity 1: SOPC_touch_irq
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_avalon_st_pipeline_base.v
+    Info (12023): Found entity 1: altera_avalon_st_pipeline_base
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_address_alignment.sv
+    Info (12023): Found entity 1: altera_merlin_address_alignment
+Info (12021): Found 2 design units, including 2 entities, in source file db/ip/sopc/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator
+    Info (12023): Found entity 2: altera_merlin_arb_adder
+Info (12021): Found 7 design units, including 7 entities, in source file db/ip/sopc/submodules/altera_merlin_burst_adapter.sv
+    Info (12023): Found entity 1: altera_merlin_burst_adapter_burstwrap_increment
+    Info (12023): Found entity 2: altera_merlin_burst_adapter_adder
+    Info (12023): Found entity 3: altera_merlin_burst_adapter_subtractor
+    Info (12023): Found entity 4: altera_merlin_burst_adapter_min
+    Info (12023): Found entity 5: altera_merlin_burst_adapter
+    Info (12023): Found entity 6: altera_merlin_burst_adapter_uncompressed_only
+    Info (12023): Found entity 7: altera_merlin_burst_adapter_full
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_traffic_limiter.sv
+    Info (12023): Found entity 1: altera_merlin_traffic_limiter
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_merlin_width_adapter.sv
+    Info (12023): Found entity 1: altera_merlin_width_adapter
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sopc/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Warning (10037): Verilog HDL or VHDL warning at SOPC_epcs.v(401): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_sdram.v(316): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_sdram.v(326): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_sdram.v(336): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_sdram.v(680): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_spi_touch.v(401): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_cpu.v(1880): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_cpu.v(1882): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_cpu.v(2038): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at SOPC_cpu.v(2866): conditional expression evaluates to a constant
+Info (12127): Elaborating entity "lcd_nios" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(25): used implicit default value for signal "BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(27): used implicit default value for signal "buzz" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(28): used implicit default value for signal "CAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(29): used implicit default value for signal "CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(31): used implicit default value for signal "CS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(34): used implicit default value for signal "led" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(36): used implicit default value for signal "MOSI_from_the_spi_touch" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(37): used implicit default value for signal "out_port_from_the_bl_n" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(38): used implicit default value for signal "out_port_from_the_bl_p" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(39): used implicit default value for signal "out_port_from_the_lcd_cs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(40): used implicit default value for signal "out_port_from_the_lcd_rd" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(41): used implicit default value for signal "out_port_from_the_lcd_rs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(42): used implicit default value for signal "out_port_from_the_lcd_wr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(43): used implicit default value for signal "out_port_from_the_reset" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(44): used implicit default value for signal "out_port_from_the_touch_cs" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(45): used implicit default value for signal "RA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(46): used implicit default value for signal "RAS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(48): used implicit default value for signal "S_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(49): used implicit default value for signal "S_DQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(50): used implicit default value for signal "SCLK_from_the_spi_touch" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(51): used implicit default value for signal "SS_n_from_the_spi_touch" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at lcd_nios.vhd(52): used implicit default value for signal "WE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (12189): OpenCore Simulation-Only Evaluation feature is turned on for all cores in the design
+    Warning (12191): Some cores in this design do not support the OpenCore Plus Hardware Evaluation feature
+        Warning (12192): "Nios II Processor (6AF7_00A2)" does not support the OpenCore Plus Hardware Evaluation feature
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[0]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[1]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[2]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[3]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[4]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[5]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[6]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[7]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[8]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[9]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[10]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[11]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[12]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[13]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[14]" has no driver
+    Warning (13040): Bidir "bidir_port_to_and_from_the_lcd32_data[15]" has no driver
+    Warning (13040): Bidir "DQ[0]" has no driver
+    Warning (13040): Bidir "DQ[1]" has no driver
+    Warning (13040): Bidir "DQ[2]" has no driver
+    Warning (13040): Bidir "DQ[3]" has no driver
+    Warning (13040): Bidir "DQ[4]" has no driver
+    Warning (13040): Bidir "DQ[5]" has no driver
+    Warning (13040): Bidir "DQ[6]" has no driver
+    Warning (13040): Bidir "DQ[7]" has no driver
+    Warning (13040): Bidir "DQ[8]" has no driver
+    Warning (13040): Bidir "DQ[9]" has no driver
+    Warning (13040): Bidir "DQ[10]" has no driver
+    Warning (13040): Bidir "DQ[11]" has no driver
+    Warning (13040): Bidir "DQ[12]" has no driver
+    Warning (13040): Bidir "DQ[13]" has no driver
+    Warning (13040): Bidir "DQ[14]" has no driver
+    Warning (13040): Bidir "DQ[15]" has no driver
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "BA[0]" is stuck at GND
+    Warning (13410): Pin "BA[1]" is stuck at GND
+    Warning (13410): Pin "buzz[0]" is stuck at GND
+    Warning (13410): Pin "buzz[1]" is stuck at GND
+    Warning (13410): Pin "buzz[2]" is stuck at GND
+    Warning (13410): Pin "buzz[3]" is stuck at GND
+    Warning (13410): Pin "CAS" is stuck at GND
+    Warning (13410): Pin "CKE" is stuck at GND
+    Warning (13410): Pin "CS" is stuck at GND
+    Warning (13410): Pin "led[0]" is stuck at GND
+    Warning (13410): Pin "led[1]" is stuck at GND
+    Warning (13410): Pin "led[2]" is stuck at GND
+    Warning (13410): Pin "led[3]" is stuck at GND
+    Warning (13410): Pin "MOSI_from_the_spi_touch" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_bl_n" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_bl_p" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_lcd_cs" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_lcd_rd" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_lcd_rs" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_lcd_wr" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_reset" is stuck at GND
+    Warning (13410): Pin "out_port_from_the_touch_cs" is stuck at GND
+    Warning (13410): Pin "RA[0]" is stuck at GND
+    Warning (13410): Pin "RA[1]" is stuck at GND
+    Warning (13410): Pin "RA[2]" is stuck at GND
+    Warning (13410): Pin "RA[3]" is stuck at GND
+    Warning (13410): Pin "RA[4]" is stuck at GND
+    Warning (13410): Pin "RA[5]" is stuck at GND
+    Warning (13410): Pin "RA[6]" is stuck at GND
+    Warning (13410): Pin "RA[7]" is stuck at GND
+    Warning (13410): Pin "RA[8]" is stuck at GND
+    Warning (13410): Pin "RA[9]" is stuck at GND
+    Warning (13410): Pin "RA[10]" is stuck at GND
+    Warning (13410): Pin "RA[11]" is stuck at GND
+    Warning (13410): Pin "RA[12]" is stuck at GND
+    Warning (13410): Pin "RAS" is stuck at GND
+    Warning (13410): Pin "S_CLK" is stuck at GND
+    Warning (13410): Pin "S_DQM[0]" is stuck at GND
+    Warning (13410): Pin "S_DQM[1]" is stuck at GND
+    Warning (13410): Pin "SCLK_from_the_spi_touch" is stuck at GND
+    Warning (13410): Pin "SS_n_from_the_spi_touch" is stuck at GND
+    Warning (13410): Pin "WE" is stuck at GND
+Info (144001): Generated suppressed messages file D:/fpga/lcd_nios/output_files/lcd_nios.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLK"
+    Warning (15610): No output dependent on input pin "in_port_to_the_touch_irq"
+    Warning (15610): No output dependent on input pin "MISO_to_the_spi_touch"
+    Warning (15610): No output dependent on input pin "RESET"
+Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21060): Implemented 32 bidirectional pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 119 warnings
+    Info: Peak virtual memory: 4676 megabytes
+    Info: Processing ended: Wed Jan 17 23:50:41 2024
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/fpga/lcd_nios/output_files/lcd_nios.map.smsg.
+
+
